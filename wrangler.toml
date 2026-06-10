@@ -1,6 +1,0 @@
-# A linha abaixo avisa a Cloudflare que este arquivo é para o Pages
-pages_build_output_dir = ".output/public"
-
-[build]
-# Isso obriga a Cloudflare a ignorar os arquivos invisíveis do TanStack e passar direto
-external = ["tanstack-start-manifest:v", "tanstack-start-injected-head-scripts:v"]
