@@ -1,4 +1,0 @@
-compatibility_date = "2026-01-01"
-
-[build]
-external = ["tanstack-start-manifest:v", "tanstack-start-injected-head-scripts:v"]
