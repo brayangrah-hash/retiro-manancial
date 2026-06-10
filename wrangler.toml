@@ -1,0 +1,5 @@
+compatibility_date = "2026-01-01"
+
+[alias]
+"tanstack-start-manifest:v" = "./cloudflare-fix.js"
+"tanstack-start-injected-head-scripts:v" = "./cloudflare-fix.js"
