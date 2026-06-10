@@ -12,6 +12,14 @@ export default defineConfig({
     // nitro/vite builds from this
     server: { entry: "server" },
   },
-  // O WRANGLER DA CLOUDFLARE PRECISA ENCONTRAR ESSA LINHA ABAIXO PARA NÃO DAR ERRO:
+  
+  // ISSO AQUI OBRIGA O VITE A RESOLVER OS MÓDULOS FANTASMAS ANTES DA CLOUDFLARE LER:
+  vite: {
+    ssr: {
+      noExternal: [/^@tanstack\/start/, "@tanstack/start-server-core"],
+    },
+  },
+  
+  // Mantém a linha que o Wrangler da Cloudflare exige para não dar erro
   plugins: [],
 });
