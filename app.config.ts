@@ -13,13 +13,13 @@ export default defineConfig({
     server: { entry: "server" },
   },
   
-  // ISSO AQUI OBRIGA O VITE A RESOLVER OS MÓDULOS FANTASMAS ANTES DA CLOUDFLARE LER:
+  // ISSO OBRIGA O MOTOR A EMBUTIR OS MÓDULOS FANTASMAS ANTES DA CLOUDFLARE LER
   vite: {
     ssr: {
-      noExternal: [/^@tanstack\/start/, "@tanstack/start-server-core"],
+      noExternal: ["@tanstack/start-server-core", /^@tanstack\/start/],
     },
   },
   
-  // Mantém a linha que o Wrangler da Cloudflare exige para não dar erro
+  // Linha necessária para o verificador da Cloudflare passar direto
   plugins: [],
 });
