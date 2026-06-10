@@ -13,13 +13,13 @@ export default defineConfig({
     server: { entry: "server" },
   },
   
-  // ISSO OBRIGA O MOTOR A EMBUTIR OS MÓDULOS FANTASMAS ANTES DA CLOUDFLARE LER
+  // 1. ISSO AQUI EMBUTE OS MÓDULOS INVISÍVEIS (:v) E CORRIGE O ERRO DO TANSTACK NA CLOUDFLARE:
   vite: {
     ssr: {
       noExternal: ["@tanstack/start-server-core", /^@tanstack\/start/],
     },
   },
   
-  // Linha necessária para o verificador da Cloudflare passar direto
+  // 2. ISSO AQUI CORRIGE AQUELE PRIMEIRO ERRO DO ROBÔ DA CLOUDFLARE:
   plugins: [],
 });
